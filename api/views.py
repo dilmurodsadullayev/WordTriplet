@@ -4,7 +4,7 @@ from .serializers import EntryWordSerializer
 from rest_framework.response import Response
 from .translation import translate_text
 from main.models import EntryWord, WordTranslation
-
+from .permissions import IsAdminOrReadOnly  
 # Create your views here.
 
 from django.shortcuts import render
@@ -72,7 +72,20 @@ class Word(APIView):
             "translations": translations_data
         })
     
+
+class WordTranslationDetail(APIView):
+
+    def get(self, request, word_id):
+        try:
+            word = EntryWord.objects.get(id=word_id)
+        except EntryWord.DoesNotExist:
+            return Response({"error": "Word not found"}, status=404)
+
+        serializer = EntryWordSerializer(word)
+        return Response(serializer.data)
+    
 class WordWithTranslationEditView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
     def get(self, request, word_id):
         try:
             word = EntryWord.objects.get(id=word_id)

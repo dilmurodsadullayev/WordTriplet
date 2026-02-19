@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Word, WordWithTranslationEditView
+from .views import Word, WordTranslationDetail, WordWithTranslationEditView, WordTranslationDetail
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -27,5 +27,7 @@ urlpatterns = [
 
 urlpatterns = [
     path('words/', Word.as_view(), name='words'),
-    path('words/<int:word_id>/', WordWithTranslationEditView.as_view(), name='word-edit'),
+
+    path('words/<int:word_id>/', WordTranslationDetail.as_view(), name='word-detail'),
+    path('admin/words/<int:word_id>/', WordWithTranslationEditView.as_view(), name='word-edit'),
 ]
