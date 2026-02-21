@@ -21,7 +21,7 @@ from django.shortcuts import get_object_or_404
 
 class Word(APIView):
     def get(self, request):
-        words = WordTranslation.objects.all()
+        words = WordTranslation.objects.all().order_by('-created_at')
         serializer = WordTranslationSerializer(words, many=True)
         return Response(serializer.data)
     

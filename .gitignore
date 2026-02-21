@@ -1,3 +1,7 @@
+# ========================
+# Python / Django backend
+# ========================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -6,96 +10,91 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribution / packaging
-.Python
-env/
+# Virtual environments
 venv/
 ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-*.whl
+env/
 
-# Django stuff:
+# Django stuff
 *.log
 *.pot
 *.pyc
-__pycache__/
 db.sqlite3
 db.sqlite3-journal
 media/
 staticfiles/
-*.mo
 
-# If using local settings files
+# Local settings
 local_settings.py
 settings_local.py
 
-# VSCode
-.vscode/
+# Testing / coverage
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
 
-# PyCharm
+# Mypy / Pyre
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# Pipenv
+Pipfile.lock
+
+# Misc
+*.swp
+*.swo
+*.bak
+*.DS_Store
+*.env
+.env.*
+celerybeat-schedule
+celerybeat.pid
+
+# ========================
+# React / Redux frontend
+# ========================
+
+# Node modules
+frontend/node_modules/
+
+# Build output
+frontend/build/
+frontend/dist/
+frontend/*.js.map
+frontend/*.js.gz
+frontend/*.css.map
+frontend/*.css.gz
+
+# Environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Redux state / temp
+frontend/src/**/*.tsbuildinfo
+frontend/src/**/*.reduxstate
+
+# VSCode / JetBrains
+.vscode/
 .idea/
 *.iml
 *.ipr
 *.iws
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Pyre type checker
-.pyre/
-
-# pipenv
-Pipfile.lock
-
-# pytest
-.cache/
-.pytest_cache/
-
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-
-# Docker
-*.env
-docker-compose.override.yml
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Misc
-*.swp
-*.swo
-*.DS_Store
-*.env
-.env.*
-
-# Celery
-celerybeat-schedule
-celerybeat.pid
-
-# Media uploads
-media/*
-
-# Static files collected
-staticfiles/
+# Jupyter / Notebook
+frontend/.ipynb_checkpoints
